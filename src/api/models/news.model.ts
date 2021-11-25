@@ -1,20 +1,22 @@
+///<reference path="global.ts" />
+
 export interface NewsItem {
-    content: string;
-    id: string;
-    link: string;
-    published: string;
-    summary: string;
-    title: string;
-    updated: string;
+  content: htmlString;
+  id: string;
+  link: urlString;
+  published: dateString;
+  summary: string;
+  title: string;
+  updated: dateString;
 }
 
 export interface NewsWrapper {
-    entries: NewsItem[];
-    generator: string;
-    id: string;
-    language: string;
-    link: string;
-    logo: string;
-    title: string;
-    updated: string;
+  entries: NewsItem[];
+  generator: string;
+  id: string;
+  language: string;
+  link: urlString;
+  logo: urlString;
+  title: string;
+  updated: dateString;
 }
