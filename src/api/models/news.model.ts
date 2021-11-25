@@ -8,7 +8,7 @@ export interface NewsItem {
     updated: string;
 }
 
-export interface NewsList {
+export interface NewsWrapper {
     entries: NewsItem[];
     generator: string;
     id: string;

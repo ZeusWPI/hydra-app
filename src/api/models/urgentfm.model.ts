@@ -1,4 +1,4 @@
-export interface Urgentfm {
+export interface UrgentfmWrapper {
     meta: UrgentfmMeta;
     name: string;
     url: string;
