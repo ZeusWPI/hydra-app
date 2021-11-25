@@ -20,7 +20,12 @@
 
 			<ion-item>
 				<ion-label>Popover</ion-label>
-				<ion-select @ionChange="setResto" interface="popover" :value="restos[0].choice[0]" placeholder="Select One">
+				<ion-select
+					@ionChange="setResto"
+					interface="popover"
+					:value="restos[0].choice[0]"
+					placeholder="Select One"
+				>
 					<ion-select-option
 						v-for="item in restos"
 						:key="item.choice[0]"
@@ -32,19 +37,28 @@
 				<ion-item>
 					<ion-header>Main meals</ion-header>
 					<ion-list>
-						<ion-item v-for="(item, idx) in getMainCourses" :key="idx">{{ item.name }}</ion-item>
+						<template v-for="(item, idx) in getMainCourses" :key="idx">
+							<ion-icon :icon="toIcon(item)" />
+							<ion-item>{{ item.name }}</ion-item>
+						</template>
 					</ion-list>
 				</ion-item>
 				<ion-item>
 					<ion-header>Cold dishes</ion-header>
 					<ion-list>
-						<ion-item v-for="(item, idx) in getColdDishes" :key="idx">{{ item.name }}</ion-item>
+						<template v-for="(item, idx) in getColdDishes" :key="idx">
+							<ion-icon :icon="toIcon(item)" />
+							<ion-item>{{ item.name }}</ion-item>
+						</template>
 					</ion-list>
 				</ion-item>
 				<ion-item>
 					<ion-header>Soups</ion-header>
 					<ion-list>
-						<ion-item v-for="(item, idx) in getSoups" :key="idx">{{ item.name }}</ion-item>
+						<template v-for="(item, idx) in getSoups" :key="idx">
+							<ion-icon :icon="toIcon(item)" />
+							<ion-item>{{ item.name }}</ion-item>
+						</template>
 					</ion-list>
 				</ion-item>
 			</ion-list>
@@ -62,6 +76,8 @@ import {
 	IonSelect,
 	IonSelectOption
 } from "@ionic/vue";
+import { ellipse, square, triangle, leaf, sad, bonfire } from "ionicons/icons";
+
 import type { SelectChangeEventDetail } from "@ionic/core";
 import { computed, ref } from "vue";
 import type { RestoMeal } from "@/api/models/resto.model";
@@ -69,10 +85,22 @@ import type { RestoMeal } from "@/api/models/resto.model";
 const { restos } = useRestoAPI();
 const { testItems } = useTestAPI();
 
+type SymbolMap = { [key: string]: any };
+const typeMap: SymbolMap = {
+	"main": triangle,
+	"side": leaf,
+	"soup": bonfire,
+	"cold": sad
+};
+
 const currentResto = ref(
 	restos[0]
 );
 
+const toIcon = (meal: RestoMeal) => {
+	if (meal.kind == "soup") return typeMap[meal.kind];
+	return typeMap[meal.type];
+};
 
 const getMainCourses = computed(() => {
 	const isMainDish = (x: RestoMeal) => x.kind != "soup" && x.type == "main";

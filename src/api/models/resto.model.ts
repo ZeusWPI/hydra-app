@@ -2,7 +2,7 @@ export interface RestoMeal {
   name: string;
   price: string; // inheriting type choice from legacy
   type: "main" | "side" | "cold" | string;
-  kind: "soup" | string; // probably one of [ 'all', 'soup', 'main' ]
+  kind: "soup" | "mean" | "vegan" | string; // probably one of [ 'all', 'soup', 'main' ]
 }
 
 export interface RestoMenu {
