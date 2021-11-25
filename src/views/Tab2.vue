@@ -16,5 +16,8 @@
 </template>
 
 <script lang="ts" setup>
+import { useRestoAPI } from "@/api/test.api";
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from "@ionic/vue";
+
+const { restos } = useRestoAPI();
 </script>
