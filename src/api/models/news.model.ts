@@ -9,7 +9,7 @@ export interface NewsItem {
 }
 
 export interface NewsList {
-    items: NewsItem[];
+    entries: NewsItem[];
     generator: string;
     id: string;
     language: string;
