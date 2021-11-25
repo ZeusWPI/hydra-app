@@ -11,8 +11,12 @@
 					<ion-title size="large">Tab 3</ion-title>
 				</ion-toolbar>
 
-				<template v-if="test.isFinished">
-					{{ test.data }}
+				<template v-if="testItems.isFinished">
+					<ul>
+						<li v-for="test in testItems.data" :key="test.id">
+							{{ test.title }}
+						</li>
+					</ul>
 				</template>
 			</ion-header>
 		</ion-content>
@@ -23,5 +27,5 @@
 import { useTestAPI } from "@/api/test.api";
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from "@ionic/vue";
 
-const { test } = useTestAPI();
+const { testItems } = useTestAPI();
 </script>
