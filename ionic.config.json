@@ -1,7 +1,7 @@
 {
-  "name": "hydra",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "vue"
+	"name": "hydra",
+	"integrations": {
+		"capacitor": {}
+	},
+	"type": "vue"
 }
