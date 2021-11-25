@@ -26,3 +26,7 @@ export interface Resto {
   endpoint: string;
   open: RestoOpening;
 }
+
+export interface RestoList {
+  locations: Resto[];
+}
