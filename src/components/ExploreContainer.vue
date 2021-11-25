@@ -10,7 +10,7 @@
 
 <script lang="ts">
 export default {
-	name: 'ExploreContainer',
+	name: "ExploreContainer",
 	props: {
 		name: String,
 	},
