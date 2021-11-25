@@ -8,7 +8,7 @@ export interface Association {
   website?: string;
 }
 
-export interface AssociationList {
+export interface AssociationWrapper {
   associations: Association[];
 }
 
@@ -41,7 +41,7 @@ export interface EventPage {
   total_pages: number;
 }
 
-export interface EventList {
+export interface EventWrapper {
   meta: EventMeta;
   page: EventPage;
 }

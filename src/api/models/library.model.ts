@@ -31,7 +31,7 @@ export interface Library {
   link: string;
 }
 
-export interface LibraryList {
+export interface LibraryWrapper {
   updated_at: string;
   created_at: string;
   libraries_limit: number;

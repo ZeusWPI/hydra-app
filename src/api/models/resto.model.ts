@@ -27,6 +27,6 @@ export interface Resto {
   open: RestoOpening;
 }
 
-export interface RestoList {
+export interface RestoWrapper {
   locations: Resto[];
 }
