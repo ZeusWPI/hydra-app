@@ -1,11 +1,13 @@
+///<reference path="global.ts" />
+
 export interface Association {
   abbreviation: string;
   description?: string;
-  email: string;
+  email: mailString;
   logo?: string;
   name: string;
   path: string[];
-  website?: string;
+  website?: urlString;
 }
 
 export interface AssociationWrapper {
@@ -13,15 +15,15 @@ export interface AssociationWrapper {
 }
 
 export interface AEvent {
-  address?: string;
+  address?: addressString;
   advertise: boolean;
   association: string;
   description?: string;
-  end_time: string;
+  end_time: dateString;
   id: number;
-  infolink?: string;
+  infolink?: urlString;
   location: string;
-  start_time: string; // what is this ordering?
+  start_time: dateString; // what is this ordering?
   sync_data?: Object; // seems to be null everywhere so idk?
   terrain: string;
   title: string;

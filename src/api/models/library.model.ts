@@ -1,39 +1,41 @@
+///<reference path="global.ts" />
+
 // format: https://widgets.lib.ugent.be/library_groups/main.json
 export interface Library {
   campus: string;
   reading_room: string;
-  created_at: string;
+  created_at: dateString;
   name_en: string;
   active: number;
-  image_url: string;
+  image_url: urlString;
   door_number: string;
-  email_acquisition: string;
-  email: string;
+  email_acquisition: mailString;
+  email: mailString;
   name: string;
   has_hours: number;
-  link_nl: string;
-  link_en?: string;
+  link_nl: urlString;
+  link_en?: urlString;
   name_nl: string;
   faculty: string;
   cubee_id?: string;
   lat: number; // latitude; longitude follows somewhere later
   pickup_locations: string[];
   code: string;
-  telephone: string[];
-  updated_at: string;
+  telephone: phoneString[];
+  updated_at: dateString;
   shipment_library_code?: string;
   address: string[];
   department: string;
   long: number; // longitude; remember latitude from earlier?
-  thumbnail_url: string;
+  thumbnail_url: urlString;
   contact: string;
   sap_id: string;
-  link: string;
+  link: urlString;
 }
 
 export interface LibraryWrapper {
-  updated_at: string;
-  created_at: string;
+  updated_at: dateString;
+  created_at: dateString;
   libraries_limit: number;
   libraries_start: number;
   code: string;

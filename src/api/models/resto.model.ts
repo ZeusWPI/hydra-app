@@ -1,3 +1,5 @@
+///<reference path="global.ts" />
+
 export interface RestoMeal {
   kind: "soup" | "vegan" | "vegetarian" | "fish" | "meat";
   name: string;
@@ -6,7 +8,7 @@ export interface RestoMeal {
 }
 
 export interface RestoMenu {
-  date: string;
+  date: dateString;
   meals: RestoMeal[];
   open: boolean;
   vegetables: string[];
