@@ -1,20 +1,28 @@
 export interface RestoMeal {
+  kind: "soup" | "vegan" | "vegetarian" | "fish" | "meat";
   name: string;
-  price: string; // inheriting type choice from legacy
-  type: string;
-  kind: string; // probably one of [ 'all', 'soup', 'main' ]
+  price: string;
+  type: "side" | "main" | "cold";
 }
 
 export interface RestoMenu {
+  date: string;
+  meals: RestoMeal[];
   open: boolean;
-  date: Date;
-  meals: RestoMeal[]; // can be filtered down to main, cold, soup
   vegetables: string[];
-  message: string;
+}
+
+export interface RestoOpening {
+  resto: [string, string][]; // list of tuples (start, end)
+  cafetaria: [string, string][]; // list of tuples (start, end)
 }
 
 export interface Resto {
-  menu: RestoMenu;
-  choice: [string, string]; // form: [name, endpoint]
-  kind: string;
+  name: string;
+  address: string;
+  latitude: string;
+  longitude: string;
+  type: "resto" | "cafetaria";
+  endpoint: string;
+  open: RestoOpening;
 }
